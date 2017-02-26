@@ -7,6 +7,31 @@ import './index.css';
 var HelloWorld = React.createClass({
 
 	propTypes: {
+		name: React.PropTypes.string,
+		isPerson: React.PropTypes.bool
+	},
+	getDefaultProps: function () {
+			return {
+				name: 'Jordi'
+			}
+	},
+	render: function(){
+		var greeting = "World";
+
+		if (this.props.isPerson) {
+			greeting = (<Person name={this.props.name} />)
+		}
+
+		return (
+			<h1>Hello {greeting}</h1>
+		)
+	}
+
+});
+
+var Person = React.createClass({
+
+	propTypes: {
 		name: React.PropTypes.string.isRequired
 	},
 	getDefaultProps: function () {
@@ -16,7 +41,7 @@ var HelloWorld = React.createClass({
 	},
 	render: function(){
 		return (
-			<h1>Hello World {this.props.name}</h1>
+			<span>{this.props.name}</span>
 		)
 	}
 
@@ -24,6 +49,6 @@ var HelloWorld = React.createClass({
 
 
 ReactDOM.render(
-  <HelloWorld/>,
+  <HelloWorld name='Jordi' isPerson={false} />,
   document.getElementById('root')
 );
