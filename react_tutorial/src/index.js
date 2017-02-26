@@ -15,6 +15,11 @@ var HelloWorld = React.createClass({
 				name: 'Jordi'
 			}
 	},
+  getInitialState: function() {
+		return {
+			value: 1
+		}
+	},
 	render: function(){
 		var greeting = "World";
 
@@ -23,7 +28,10 @@ var HelloWorld = React.createClass({
 		}
 
 		return (
-			<h1>Hello {greeting}</h1>
+			<div>
+				<h1>Hello {greeting}</h1>
+				{this.state.value}
+			</div>
 		)
 	}
 
