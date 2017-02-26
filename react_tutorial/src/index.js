@@ -25,6 +25,9 @@ var HelloWorld = React.createClass({
 			value: this.state.value + 19
 		});
 	},
+  _addByOne: function() {
+		console.log('entra');
+	},
 	render: function(){
 		var greeting = "World";
 
@@ -36,6 +39,7 @@ var HelloWorld = React.createClass({
 			<div>
 				<h1>Hello {greeting}</h1>
 				{this.state.value}
+				<button onClick={this._addByOne}>Click Me</button>
 			</div>
 		)
 	}
