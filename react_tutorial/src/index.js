@@ -20,6 +20,11 @@ var HelloWorld = React.createClass({
 			value: 1
 		}
 	},
+	componentDidMount: function() {
+		this.setState({
+			value: this.state.value + 19
+		});
+	},
 	render: function(){
 		var greeting = "World";
 
