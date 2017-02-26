@@ -6,7 +6,7 @@ class ContactsList extends React.Component {
     return (
         <ul>
           {this.props.contacts.map((contact) => {
-            return <Contact contact={contact}/>
+            return <Contact contact={contact} key={contact.id}/>
           })}
         </ul>
     )
