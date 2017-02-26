@@ -21,12 +21,11 @@ var HelloWorld = React.createClass({
 		}
 	},
 	componentDidMount: function() {
-		this.setState({
-			value: this.state.value + 19
-		});
 	},
   _addByOne: function() {
-		console.log('entra');
+		this.setState({
+			value: this.state.value + 1
+		});
 	},
 	render: function(){
 		var greeting = "World";
