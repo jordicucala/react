@@ -7,7 +7,7 @@ import './index.css';
 var HelloWorld = React.createClass({
 	render: function(){
 		return (
-			<h1>Hello World!</h1>
+			<h1>Hello World {this.props.name}</h1>
 		)
 	}
 
@@ -15,6 +15,6 @@ var HelloWorld = React.createClass({
 
 
 ReactDOM.render(
-  <HelloWorld />,
+  <HelloWorld name='Jordi' />,
   document.getElementById('root')
 );
