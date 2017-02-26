@@ -3,7 +3,18 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
 
+
+var HelloWorld = React.createClass({
+	render: function(){
+		return (
+			<h1>Hello World!</h1>
+		)
+	}
+
+});
+
+
 ReactDOM.render(
-  <App />,
+  <HelloWorld />,
   document.getElementById('root')
 );
