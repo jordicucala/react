@@ -7,7 +7,7 @@ import './index.css';
 var HelloWorld = React.createClass({
 
 	propTypes: {
-		name: React.PropTypes.string
+		name: React.PropTypes.string.isRequired
 	},
 	getDefaultProps: function () {
 			return {
@@ -24,6 +24,6 @@ var HelloWorld = React.createClass({
 
 
 ReactDOM.render(
-  <HelloWorld name={false} />,
+  <HelloWorld/>,
   document.getElementById('root')
 );
