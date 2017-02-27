@@ -2,20 +2,20 @@ import React from 'react';
 import Contact from './Contact';
 
 class ContactsList extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      search: ''
+      search: '',
+      contacts: props.contacts
     };
   }
 
   updateSearch(event) {
-    console.log(event.target.value);
     this.setState({search: event.target.value.substr(0,10)});
   }
 
   render() {
-    let filteredContacts = this.props.contacts.filter(
+    let filteredContacts = this.state.contacts.filter(
       (contact) => {
         return contact.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
       }
