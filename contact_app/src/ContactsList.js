@@ -33,14 +33,14 @@ class ContactsList extends React.Component {
         <div>
         <ul>
           {filteredContacts.map((contact) => {
-            return <Contact contact={contact} key={contact.id}/>
+            return <Contact contact={contact} item="hello" key={contact.id}/>
           })}
         </ul>
         <input type="text" placeholder="Search" value={this.state.search} onChange={this.updateSearch.bind(this)}/>
         <form onSubmit={this.addContact.bind(this)}>
           <input type="text" ref="name" />
           <input type="text" ref="phone" />
-          <button type="submit">Add New Contactt</button>
+          <button type="submit">Add New Contact</button>
         </form>
         </div>
     )
