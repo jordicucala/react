@@ -15,8 +15,12 @@ class ContactsList extends React.Component {
   }
   addContact(event) {
       event.preventDefault();
-      console.log(this.refs.name.value);
-      console.log(this.refs.phone.value);
+      let name = this.refs.name.value;
+      let phone = this.refs.phone.value;
+      let id = Math.floor((Math.random() * 100) + 1)
+      this.setState({
+        contacts: this.state.contacts.concat({id, name, phone})
+      })
   }
 
   render() {
