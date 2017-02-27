@@ -13,6 +13,11 @@ class ContactsList extends React.Component {
   updateSearch(event) {
     this.setState({search: event.target.value.substr(0,10)});
   }
+  addContact(event) {
+      event.preventDefault();
+      console.log(this.refs.name.value);
+      console.log(this.refs.phone.value);
+  }
 
   render() {
     let filteredContacts = this.state.contacts.filter(
@@ -28,6 +33,11 @@ class ContactsList extends React.Component {
           })}
         </ul>
         <input type="text" placeholder="Search" value={this.state.search} onChange={this.updateSearch.bind(this)}/>
+        <form onSubmit={this.addContact.bind(this)}>
+          <input type="text" ref="name" />
+          <input type="text" ref="phone" />
+          <button type="submit">Add New Contactt</button>
+        </form>
         </div>
     )
   }
