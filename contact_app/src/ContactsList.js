@@ -27,7 +27,7 @@ class ContactsList extends React.Component {
             return <Contact contact={contact} key={contact.id}/>
           })}
         </ul>
-        <input type="text" value={this.state.search} onChange={this.updateSearch.bind(this)}/>
+        <input type="text" placeholder="Search" value={this.state.search} onChange={this.updateSearch.bind(this)}/>
         </div>
     )
   }
